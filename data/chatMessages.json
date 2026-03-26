@@ -1,0 +1,38 @@
+[
+  {
+    "id": "8357c7b1-2248-4916-9143-33440cc688cb",
+    "roomId": "home",
+    "body": "hello",
+    "createdAt": "2026-03-25T14:08:59.039Z",
+    "senderId": "user_3BOjkLW8Hu8eATcwW7sChNIuQgl",
+    "senderName": "Prince Owo",
+    "senderImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQk9qa09pODVxMk5UYlN0bFg1d21RMGZJYTkifQ"
+  },
+  {
+    "id": "afb1bae6-26bd-470e-8242-a44a67f715da",
+    "roomId": "home",
+    "body": "Hey there",
+    "createdAt": "2026-03-25T14:56:30.679Z",
+    "senderId": "user_3BOjkLW8Hu8eATcwW7sChNIuQgl",
+    "senderName": "Prince Owo",
+    "senderImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQk9qa09pODVxMk5UYlN0bFg1d21RMGZJYTkifQ"
+  },
+  {
+    "id": "f96ad1a5-b4f5-41a9-8866-c0dd539c77de",
+    "roomId": "home",
+    "body": "hello",
+    "createdAt": "2026-03-26T16:48:02.913Z",
+    "senderId": "user_3BOjkLW8Hu8eATcwW7sChNIuQgl",
+    "senderName": "Prince Owo",
+    "senderImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQk9qa09pODVxMk5UYlN0bFg1d21RMGZJYTkifQ"
+  },
+  {
+    "id": "66d83fdf-eb14-455c-9628-76eaa4e5ac46",
+    "roomId": "home",
+    "body": "hi",
+    "createdAt": "2026-03-26T18:58:15.931Z",
+    "senderId": "user_3BOjkLW8Hu8eATcwW7sChNIuQgl",
+    "senderName": "Prince Owo",
+    "senderImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQk9qa09pODVxMk5UYlN0bFg1d21RMGZJYTkifQ"
+  }
+]

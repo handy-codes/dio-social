@@ -1,0 +1,21 @@
+.sidebar{
+    flex: 3;
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+    position: sticky;
+    top: 50px;
+   }   
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    width: 5px;
+    background-color: #f1f1f1;
+}   
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(179, 179, 179);
+    /* background-color: red; */
+}   

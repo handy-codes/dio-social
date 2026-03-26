@@ -125,12 +125,12 @@ export default function Share() {
           </div>
         </div>
         {imageUrl ? (
-          <div className="px-6 pb-4 pt-2">
-            <div className="w-full overflow-hidden rounded-md bg-gray-100">
+          <div className="px-6 pb-4 pt-2 min-w-0 w-full max-w-full">
+            <div className="w-full max-w-full overflow-hidden rounded-md bg-neutral-100">
               <img
                 src={imageUrl}
                 alt="Attachment preview"
-                className="w-full max-h-[500px] object-cover rounded-md"
+                className="block w-full max-w-full h-auto max-h-[min(500px,70vh)] object-contain object-center"
               />
             </div>
           </div>

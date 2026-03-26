@@ -25,8 +25,7 @@ export default async function Feed() {
   const merged = [...posts, ...demoPosts];
 
   return (
-    // <div className="flex-1 min-w-0 w-full max-w-[680px] p-5 py-6">
-    <div className="w-[100vw] md:w-[75vw] lg:w-[45vw] p-5 py-6">
+    <div className="flex-1 min-w-0 w-full max-w-[680px] mx-auto p-5 py-6">
       <Share />
       <ChatPanel />
       {merged.map((p) => (

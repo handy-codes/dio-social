@@ -17,8 +17,8 @@ export default function Post({post}){
     }
     return(
         <>
-            <div className='post w-[100%] rounded-md bg-white hover:scale-[1.025] transition-transform'>
-            <div className='p-3'>
+            <div className='post w-[100%] min-w-0 max-w-full overflow-hidden rounded-md bg-white hover:scale-[1.025] transition-transform'>
+            <div className="p-3 min-w-0">
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center'>
                         <Image src={post.authorImageUrl || "/assets/team/girl.png"}
@@ -37,14 +37,16 @@ export default function Post({post}){
                     </div>
                 </div>
 
-                <div className='my-[20px]'>
-                    <span>{post?.content}</span>
+                <div className='my-[20px] min-w-0 w-full max-w-full'>
+                    <span className="break-words">{post?.content}</span>
                     {post.imageUrl ? (
-                      <img
-                        className='w-full cursor-pointer max-h-[500px] mt-[20px] object-cover rounded-md'
-                        alt="post"
-                        src={post.imageUrl}
-                      />
+                      <div className="mt-5 w-full max-w-full overflow-hidden rounded-md bg-neutral-100">
+                        <img
+                          className="block w-full max-w-full h-auto max-h-[min(500px,70vh)] object-contain object-center"
+                          alt="post"
+                          src={post.imageUrl}
+                        />
+                      </div>
                     ) : null}
                 </div>
 

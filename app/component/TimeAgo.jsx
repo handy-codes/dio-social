@@ -26,7 +26,9 @@ function formatTimeAgo(dateInput) {
 }
 
 export default function TimeAgo({ date, className = "" }) {
-  const [value, setValue] = useState(formatTimeAgo(date));
+  // Relative time must not run on the server initial HTML vs first client paint,
+  // or hydration mismatches ("just now" vs "13 seconds ago"). Compute only after mount.
+  const [value, setValue] = useState(null);
 
   useEffect(() => {
     setValue(formatTimeAgo(date));
@@ -34,5 +36,5 @@ export default function TimeAgo({ date, className = "" }) {
     return () => clearInterval(interval);
   }, [date]);
 
-  return <span className={className}>{value}</span>;
+  return <span className={className}>{value === null ? "…" : value}</span>;
 }

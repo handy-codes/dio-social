@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Topbar />
-      <main className="flex w-full min-w-0 max-w-full justify-center gap-0 overflow-x-hidden bg-[#f0f2f5]">
+      <main className="flex w-full min-w-0 max-w-full justify-center gap-0 bg-[#f0f2f5] [overflow-x:clip]">
         <Sidebar />
         <Feed />
         <Rightbar />

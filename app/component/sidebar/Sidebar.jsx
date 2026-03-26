@@ -6,7 +6,7 @@ import CloseFriend from "../CloseFriend"
 
 export default function Sidebar() {
   return (
-    <div className="sidebar hidden md:block w-[25vw] px-5 py-3 font-semibold">
+    <div className="sidebar hidden md:block w-[260px] shrink-0 px-5 py-3 font-semibold bg-[#f0f2f5] z-10">
       <div className=''>
         <ul>
           <li className='flex items-center my-4 cursor-pointer gap-2'>

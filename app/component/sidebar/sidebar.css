@@ -1,10 +1,13 @@
-.sidebar{
-    flex: 3;
-    height: calc(100vh - 65px);
-    overflow-y: scroll;
+/* Sticky in a flex row requires align-self: flex-start or the column stretches
+   to the feed height and sticky has no room to “stick”. Top matches Topbar h-[65px]. */
+.sidebar {
     position: sticky;
-    top: 50px;
-   }   
+    top: 65px;
+    align-self: flex-start;
+    max-height: calc(100vh - 65px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
 ::-webkit-scrollbar{
     width: 5px;

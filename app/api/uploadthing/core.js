@@ -6,7 +6,7 @@ const f = createUploadthing();
 export const ourFileRouter = {
   imageUploader: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
     .middleware(async () => {
-      const { userId } = auth();
+      const { userId } = await auth();
       // Keep uploads resilient in development; use a fallback userId
       // so prepareUpload does not fail when auth state is transient.
       return { userId: userId ?? "guest" };

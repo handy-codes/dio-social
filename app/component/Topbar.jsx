@@ -1,7 +1,9 @@
+"use client";
+
 import Link from 'next/link'
 import React from 'react'
 import {Person, Search, Chat, Notifications} from '@mui/icons-material'
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 
 
 
@@ -46,7 +48,7 @@ export default function Topbar() {
               </span>
             </div>
           </div>
-          <SignedOut>
+          <Show when="signed-out">
             <SignInButton mode="modal">
               <button
                 type="button"
@@ -55,10 +57,10 @@ export default function Topbar() {
                 Sign In
               </button>
             </SignInButton>
-          </SignedOut>
-          <SignedIn>
+          </Show>
+          <Show when="signed-in">
             <UserButton afterSignOutUrl="/" />
-          </SignedIn>
+          </Show>
         </div>
       </nav>
     </header>

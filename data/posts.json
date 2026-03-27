@@ -1,5 +1,26 @@
 [
   {
+    "id": "171e619d-c592-4a0a-a82b-fc0d0601b7d0",
+    "content": "D-Tech Digital Solutions is set to disrupt the cyber security landscape of African tech",
+    "imageUrl": "/uploads/guest-1774652756817-66iwec.jpg",
+    "createdAt": "2026-03-27T23:06:57.740Z",
+    "authorId": "user_3BXthfPXbNwXDyWenegjcQAdKyK",
+    "authorName": "Chucks",
+    "authorImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQlh0aFlHSm1zTjRuTnV5T0ZRQUxlZzd4U2cifQ",
+    "authorUsername": "devmex167",
+    "comments": [
+      {
+        "id": "0bc5a330-68a6-4232-ba68-d4f442f43fc4",
+        "body": "I trust Engr Dio. Mr Emeka here.",
+        "createdAt": "2026-03-27T23:09:38.314Z",
+        "authorId": "user_3BOjkLW8Hu8eATcwW7sChNIuQgl",
+        "authorName": "Prince Owo",
+        "authorImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQk9qa09pODVxMk5UYlN0bFg1d21RMGZJYTkifQ",
+        "authorUsername": "princeowo73"
+      }
+    ]
+  },
+  {
     "id": "e30dd0ff-d63d-42e3-af08-7d94748729ac",
     "content": "Hello Dio, check out eSaver logo",
     "imageUrl": "/uploads/user_3BO-1774553405709-rb0gxz.png",

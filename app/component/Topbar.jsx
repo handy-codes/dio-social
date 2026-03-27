@@ -1,13 +1,32 @@
 "use client";
 
-import Link from 'next/link'
-import React from 'react'
-import {Person, Search, Chat, Notifications} from '@mui/icons-material'
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { Person, Search, Chat, Notifications } from "@mui/icons-material";
 import { Show, SignInButton, UserButton } from "@clerk/nextjs";
+import { useRouter, useSearchParams } from "next/navigation";
 
 
 
 export default function Topbar() {
+  // Search value stays in the URL (`?q=`) so the feed can filter server-side.
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get("q") || "");
+
+  useEffect(() => {
+    setQuery(searchParams.get("q") || "");
+  }, [searchParams]);
+
+  const submitSearch = (e) => {
+    e.preventDefault();
+    const term = query.trim();
+    const params = new URLSearchParams();
+    if (term) params.set("q", term);
+    const qs = params.toString();
+    router.push(qs ? `/?${qs}` : "/");
+  };
+
   return (
     <header className='h-[65px] bg-[#1877F2] font-semibold sticky top-0 z-50'>
       <nav className="flex justify-between h-full w-full px-4 sm:p-6 items-center text-white">
@@ -15,11 +34,16 @@ export default function Topbar() {
           <h1 className='sm:block text-2xl'>DIO</h1>
         </Link>
         <div className="min-w-0 flex-1 max-w-xl mx-2 sm:mx-4 max-[640px]:hidden">
-          <div className="h-[40px] rounded-full flex bg-white px-4 items-center">
-            <Search className='text-black mr-2'/>
-            <input type="text" placeholder='Search for friends, posts and videos' 
-            className='h-full px-2 w-full focus:outline-none text-black bg-transparent'/>
-          </div>
+          <form onSubmit={submitSearch} className="h-[40px] rounded-full flex bg-white px-4 items-center">
+            <Search className="text-black mr-2" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search for friends, posts and videos"
+              className="h-full px-2 w-full focus:outline-none text-black bg-transparent"
+            />
+          </form>
         </div>
         <div className="flex gap-4 items-center shrink-0">
           <Link href="/">

@@ -6,7 +6,14 @@ import { EmojiEmotions, Label, PermMedia, Room } from "@mui/icons-material";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 
+function Spinner() {
+  return (
+    <span className="inline-block w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
+  );
+}
+
 export default function Share() {
+  // useUser keeps composer identity/avatar in sync with Clerk session.
   const { user, isSignedIn } = useUser();
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -43,7 +50,19 @@ export default function Share() {
       const res = await fetch("/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content, imageUrl }),
+        body: JSON.stringify({
+          content,
+          imageUrl,
+          user: {
+            id: user?.id,
+            name: user?.fullName || user?.firstName || "User",
+            imageUrl: user?.imageUrl || null,
+            username:
+              user?.username ||
+              user?.primaryEmailAddress?.emailAddress?.split("@")[0] ||
+              "user",
+          },
+        }),
       });
 
       if (!res.ok) {
@@ -81,6 +100,14 @@ export default function Share() {
             type="text"
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                if (!isSubmitting && content.trim()) {
+                  void handleShare();
+                }
+              }
+            }}
             placeholder="what are you thinking?"
             className="focus:outline-none w-full font-semibold"
           />
@@ -107,9 +134,16 @@ export default function Share() {
           <button
             disabled={isSubmitting || !content.trim()}
             onClick={handleShare}
-            className="border-none p-[7px] text-[12px] rounded-md text-white cursor-pointer mr-[20px] bg-[green] disabled:opacity-60"
+            className="border-none p-[7px] text-[12px] rounded-md text-white cursor-pointer mr-[20px] bg-[green] disabled:opacity-60 disabled:cursor-not-allowed min-w-[72px]"
           >
-            {isSubmitting ? "Sharing..." : "Share"}
+            {isSubmitting ? (
+              <span className="inline-flex items-center justify-center gap-1">
+                <Spinner />
+                Share
+              </span>
+            ) : (
+              "Share"
+            )}
           </button>
           <div className="hidden sm:flex">
             <Label htmlColor="green" />

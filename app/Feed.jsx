@@ -1,7 +1,6 @@
 import React from "react";
 import Share from "./component/Share";
 import Post from "./component/Post";
-import ChatPanel from "./component/ChatPanel";
 import { getPosts } from "../lib/store";
 import { Posts as dummyPosts, Users } from "../dummyData";
 
@@ -19,18 +18,29 @@ function mapDummyPost(p) {
   };
 }
 
-export default async function Feed() {
+export default async function Feed({ searchTerm = "" }) {
   const posts = await getPosts();
   const demoPosts = dummyPosts.map(mapDummyPost);
   const merged = [...posts, ...demoPosts];
+  const q = searchTerm.trim().toLowerCase();
+  const visible = q
+    ? merged.filter((p) => {
+        const haystack = `${p.content ?? ""} ${p.authorName ?? ""} ${p.authorUsername ?? ""}`.toLowerCase();
+        return haystack.includes(q);
+      })
+    : merged;
 
   return (
     <div className="flex-1 min-w-0 w-full max-w-[680px] mx-auto p-5 py-6">
       <Share />
-      <ChatPanel />
-      {merged.map((p) => (
+      {visible.map((p) => (
         <Post key={p.id} post={p} />
       ))}
+      {visible.length === 0 ? (
+        <div className="post w-full rounded-md bg-white p-4 text-sm text-gray-600">
+          No posts match your search.
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -7,6 +7,17 @@
     "authorId": "user_3BOjkLW8Hu8eATcwW7sChNIuQgl",
     "authorName": "Prince Owo",
     "authorImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQk9qa09pODVxMk5UYlN0bFg1d21RMGZJYTkifQ",
-    "authorUsername": "princeowo73"
+    "authorUsername": "princeowo73",
+    "comments": [
+      {
+        "id": "c83d03ba-cfa0-46e4-9653-45507c3bc392",
+        "body": "is this real?",
+        "createdAt": "2026-03-27T22:09:43.953Z",
+        "authorId": "user_3BXthfPXbNwXDyWenegjcQAdKyK",
+        "authorName": "Chucks",
+        "authorImageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQlh0aFlHSm1zTjRuTnV5T0ZRQUxlZzd4U2cifQ",
+        "authorUsername": "devmex167"
+      }
+    ]
   }
 ]

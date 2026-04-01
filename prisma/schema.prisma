@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id              String    @id
+  content         String
+  imageUrl        String?
+  createdAt       DateTime  @default(now())
+  authorId        String?
+  authorName      String
+  authorImageUrl  String?
+  authorUsername  String
+  comments        Comment[]
+
+  @@index([createdAt])
+}
+
+model Comment {
+  id              String   @id
+  postId          String
+  post            Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  body            String
+  createdAt       DateTime @default(now())
+  authorId      String
+  authorName      String
+  authorImageUrl  String?
+  authorUsername  String
+
+  @@index([postId])
+}
+
+model ChatMessage {
+  id              String   @id
+  roomId          String
+  body            String
+  createdAt       DateTime @default(now())
+  senderId        String?
+  senderName      String
+  senderImageUrl  String?
+  senderUsername  String
+
+  @@index([roomId, createdAt])
+}

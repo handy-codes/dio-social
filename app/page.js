@@ -3,9 +3,10 @@ import Sidebar from "./component/sidebar/Sidebar";
 import Topbar from "./component/Topbar";
 import Feed from "./Feed";
 
-export default function Home({ searchParams }) {
+export default async function Home({ searchParams }) {
   // Server-side query extraction allows feed filtering before rendering.
-  const searchTerm = typeof searchParams?.q === "string" ? searchParams.q : "";
+  const params = await searchParams;
+  const searchTerm = typeof params?.q === "string" ? params.q : "";
 
   return (
     <>
